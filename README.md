@@ -1,7 +1,7 @@
 # chrome-extension-demo
 
 ## Install
-```
+```shell
 # npm
 npm install vite-plugin-crx-mv3 -D
 # or yarn
@@ -27,7 +27,7 @@ export default defineConfig({
 ```
 
 ## Run
-```
+```shell
 # development
 npm run dev
 # production
