@@ -11,7 +11,7 @@ pnpm add vite-plugin-crx-mv3 -D
 ```
 
 ## Configuration
-```
+```javascript
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import crx from 'vite-plugin-crx-mv3'
