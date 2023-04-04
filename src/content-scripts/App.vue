@@ -5,13 +5,15 @@
       type="primary"
       @click="handleClick"
     >
-      Click me
+      Click me~
     </el-button>
   </div>
 </template>
 <script lang="ts" setup>
+import { ElMessage } from 'element-plus'
+
 function handleClick() {
-  alert('This is a fun Chrome extension.')
+  ElMessage.success('click me')
 }
 </script>
 <style scoped lang="scss">

@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    webextensions: true,
   },
   extends: [
     'plugin:vue/vue3-recommended',
@@ -20,6 +21,7 @@ module.exports = {
   ],
   rules: {
     camelcase: 'off',
+    'no-console': 'off',
     'no-alert': 'off',
     'vue/no-v-html': 'off',
     'import/first': 'off',
@@ -28,6 +30,7 @@ module.exports = {
     'import/no-dynamic-require': 'off',
     'import/prefer-default-export': 'off',
     'no-plusplus': 'off',
+    'no-return-await': 'off',
     semi: [
       'error',
       'never',

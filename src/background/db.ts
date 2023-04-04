@@ -12,7 +12,9 @@ import { onMessage } from './utils'
  */
 class CrxIndexDB {
   private database: string
+
   private tableName: string
+
   private db: any
 
   constructor(database: string, tableName: string) {
@@ -38,7 +40,7 @@ class CrxIndexDB {
     const store = tx.objectStore(tableName)
     const result = await store.put({
       keyName,
-      value
+      value,
     })
     return result
   }
@@ -56,7 +58,8 @@ class CrxIndexDB {
     return keyName
   }
 
-  private sleep = (num): Promise<boolean> => {
+  // eslint-disable-next-line class-methods-use-this
+  private sleep(num: number): Promise<boolean> {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(true)
@@ -64,7 +67,7 @@ class CrxIndexDB {
     })
   }
 
-  private async dbReady() {
+  private async dbReady(): Promise<boolean> {
     if (!this.db) {
       await this.sleep(0.5)
       return await this.dbReady()
@@ -73,46 +76,46 @@ class CrxIndexDB {
   }
 
   private registerMessage() {
-    onMessage('get-value-bg', async (params): Promise<any> => {
+    onMessage('get-value-bg', async (params: any): Promise<any> => {
       try {
         const res = await this.getValue(params.keyName)
         return {
-          result: res
+          result: res,
         }
       } catch (e) {
         return {
-          result: null
+          result: null,
         }
       }
     })
-    onMessage('set-value-bg', async ({ data }): Promise<any> => {
+    onMessage('set-value-bg', async ({ data }: any): Promise<any> => {
       try {
         const res = await this.setValue(data.keyName, data.value)
         return {
-          result: res
+          result: res,
         }
       } catch (e) {
         return {
-          result: null
+          result: null,
         }
       }
     })
-    onMessage('del-value-bg', async ({ data }): Promise<any> => {
+    onMessage('del-value-bg', async ({ data }: any): Promise<any> => {
       try {
         const res = await this.deleteValue(data.keyName)
         return {
-          result: res
+          result: res,
         }
       } catch (e) {
         return {
-          result: null
+          result: null,
         }
       }
     })
   }
 
   private async createObjectStore() {
-    const tableName = this.tableName
+    const { tableName } = this
     try {
       this.db = await openDB(this.database, 1, {
         upgrade(db: IDBPDatabase) {
@@ -120,12 +123,12 @@ class CrxIndexDB {
             return
           }
           db.createObjectStore(tableName, {
-            keyPath: 'keyName'
+            keyPath: 'keyName',
           })
-        }
+        },
       })
     } catch (error) {
-      return false
+      console.error(error)
     }
   }
 }

@@ -1,5 +1,6 @@
 {
-  "name": "crx-vue",
+  "name": "ChatGPT VOC",
+  "manifest_version": 3,
   "description": "A Chrome extension demo.",
   "version": "1.0.0",
   "icons": {
@@ -11,7 +12,7 @@
     "default_popup": "/index.html"
   },
   "content_scripts": [{
-    "matches": [ "<all_urls>" ],
+    "matches": [ "*://www.google.com/*" ],
     "js": [ "content-scripts/content.ts"],
     "run_at": "document_start"
   }],
@@ -21,6 +22,5 @@
   "web_accessible_resources": [{
     "matches": ["<all_urls>"],
     "resources": ["assets/*"]
-  }],
-  "manifest_version": 3
+  }]
 }
