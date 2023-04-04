@@ -4,6 +4,10 @@
     "paths": {
       "@/*": ["src/*"]
     },
+    "types": [
+      "chrome",
+      "vite/client"
+    ],
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",

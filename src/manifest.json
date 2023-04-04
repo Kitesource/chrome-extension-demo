@@ -1,5 +1,5 @@
 {
-  "name": "ChatGPT VOC",
+  "name": "crx-voc",
   "manifest_version": 3,
   "description": "A Chrome extension demo.",
   "version": "1.0.0",
@@ -12,12 +12,12 @@
     "default_popup": "/index.html"
   },
   "content_scripts": [{
-    "matches": [ "*://www.google.com/*" ],
+    "matches": [ "https://www.google.com/*" ],
     "js": [ "content-scripts/content.ts"],
     "run_at": "document_start"
   }],
   "background": {
-    "service_worker": "background.ts"
+    "service_worker": "./background/index.ts"
   },
   "web_accessible_resources": [{
     "matches": ["<all_urls>"],

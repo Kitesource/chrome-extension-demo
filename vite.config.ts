@@ -2,10 +2,12 @@ import path from 'path'
 import { defineConfig } from 'vite'
 import createVitePlugins from './src/plugins'
 
+const resolve = (...args: string[]) => path.resolve(__dirname, '.', ...args)
+
 export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': resolve('src'),
     },
   },
   css: {
@@ -18,5 +20,6 @@ export default defineConfig(({ mode }) => ({
   plugins: [...createVitePlugins()],
   build: {
     emptyOutDir: mode === 'production',
+    outDir: mode === 'production' ? resolve('dist-prod') : resolve('dist-dev'),
   },
 }))

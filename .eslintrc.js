@@ -19,6 +19,9 @@ module.exports = {
     'vue',
     '@typescript-eslint',
   ],
+  globals: {
+    chrome: 'readonly',
+  },
   rules: {
     camelcase: 'off',
     'no-console': 'off',

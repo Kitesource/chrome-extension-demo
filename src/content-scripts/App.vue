@@ -5,7 +5,7 @@
       type="primary"
       @click="handleClick"
     >
-      Click me~
+      Click me1
     </el-button>
   </div>
 </template>
