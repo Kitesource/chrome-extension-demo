@@ -1,17 +1,22 @@
+import path from 'path'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import crx from 'vite-plugin-crx-mv3'
+import createVitePlugins from './src/plugins'
 
-export default defineConfig(({ mode }) => {
-  return {
-    plugins: [
-      vue(),
-      crx({
-        manifest: './src/manifest.json'
-      }),
-    ],
-    build: {
-      emptyOutDir: mode == 'production',
+export default defineConfig(({ mode }) => ({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
     },
-  }
-})
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: "@use './src/styles/element.scss' as *;",
+      },
+    },
+  },
+  plugins: [...createVitePlugins()],
+  build: {
+    emptyOutDir: mode === 'production',
+  },
+}))

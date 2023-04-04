@@ -1,0 +1,12 @@
+dist/
+
+node_modules
+
+*.md
+*.sh
+*.woff
+*.ttf
+*.py
+
+package-lock.json
+pnpm-lock.yaml

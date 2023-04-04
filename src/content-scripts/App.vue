@@ -1,19 +1,21 @@
 <template>
   <div class="container">
-    <div class="button" @click="handleClick"></div>
+    <el-button
+      class="button"
+      type="primary"
+      @click="handleClick"
+    >
+      Click me
+    </el-button>
   </div>
 </template>
-<script setup>
+<script lang="ts" setup>
 function handleClick() {
   alert('This is a fun Chrome extension.')
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 .button {
-  width: 200px;
-  height: 80px;
-  background: url(../assets/click-here.png) no-repeat;
-  background-size: 100% 100%;
   position: fixed;
   top: 50%;
   margin-top: -40px;
