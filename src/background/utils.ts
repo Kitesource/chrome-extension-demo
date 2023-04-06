@@ -27,12 +27,12 @@ export const sendMessage = (taskId: string, params: any) => new Promise((resolve
   )
 })
 
-export const showStayHydratedNotification = () => {
+export const showStayNotification = (type:any, title:string, message:string) => {
   chrome.notifications.create({
-    type: 'basic',
+    type,
     iconUrl: 'https://www.google.com/favicon.ico',
-    title: 'Time to Hydrate',
-    message: 'Everyday I\'m Guzzlin\'!',
+    title,
+    message,
     buttons: [
       { title: 'Keep it Flowing.' },
     ],

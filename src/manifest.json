@@ -9,6 +9,7 @@
     "48": "assets/icons/icon48.png",
     "128": "assets/icons/icon128.png"
   },
+  "options_page": "/options.html",
   "action": {
     "default_title": "ChatGPT VOC",
     "default_popup": "/popup.html"
@@ -28,6 +29,9 @@
     "resources": ["assets/*"]
   }],
   "permissions": [
-    "notifications"
+    "storage",
+    "notifications",
+    "activeTab",
+    "scripting"
   ]
 }
