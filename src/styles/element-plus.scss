@@ -1,196 +1,180 @@
-@use 'sass:map';
-// styles/element/index.scss
-/* just override what you need */
+/* Just rewrite what you need */
+
+// https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/mixins/function.scss
+// https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss
+// @use 'element-plus/theme-chalk/src/mixins/function' as *;
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
+
+  // Color
   $colors: (
     'primary': (
       'base': $--color-brand-500,
+      'var-name': 'brand',
     ),
     'success': (
       'base': $--color-green-500,
+      'var-name': 'green',
     ),
     'warning': (
       'base': $--color-orange-500,
+      'var-name': 'orange',
     ),
     'danger': (
       'base': $--color-red-500,
+      'var-name': 'red',
     ),
     'error': (
       'base': $--color-red-500,
+      'var-name': 'red',
     ),
     'info': (
-      'base': $--color-neutral-300,
+      'base': $--color-neutral-500,
+      'var-name': 'neutral',
     ),
   ),
+
   $text-color: (
     'primary': $--color-neutral-800,
     'regular': $--color-neutral-600,
-    'secondary': $--color-neutral-70,
-    'placeholder': $--color-neutral-50,
+    'secondary': $--color-neutral-400,
+    'placeholder': $--color-neutral-300,
+    'disabled': $--color-neutral-300
   ),
-  $font-size: (
-    'extra-large': 20px,
-    'large': 18px,
-    'medium': 16px,
-    'base': 14px,
-    'small': 14px,
-    'extra-small': 13px,
-  ),
+
   $border-color: (
-    'base': $--color-neutral-30,
-    'light': $--color-neutral-20,
-    'lighter': $--color-neutral-10,
-    'extra-light': $--color-neutral-10,
+    '': $--color-neutral-200,
+    'light': $--color-neutral-100,
+    'lighter': $--color-neutral-100,
+    'extra-light': $--color-neutral-100,
+    'dark': $--color-neutral-300,
+    'darker': $--color-neutral-300
   ),
-  $header: (
-    'padding': 0 16px,
-    'height': 60px,
+
+  $fill-color: (
+    '': $--color-neutral-100,
+    'light': $--color-neutral-50,
+    'lighter': $--color-neutral-50,
+    'extra-light': $--color-neutral-50,
+    'dark': rgba($--color-neutral-200,.5),
+    'darker': rgba($--color-neutral-200,.5)
   ),
-  $footer: (
-    'padding': 0 16px,
-    'height': 60px,
-  ),
-  $main: (
-    'padding': 16px,
-  ),
-  // Break-point
-  $sm: 640px,
-  $md: 768px,
-  $lg: 1024px,
-  $xl: 1280px,
-  $xxl: 1536px,
+
   // Background
-  $background-color-base: $--color-neutral-10,
+  $bg-color: (
+    'page': $--color-neutral-50,
+  ),
 
   // Border
-  $border-radius:
-    (
-      'base': 2px,
-      'small': 2px,
-      'round': 16px,
-      'circle': 100%,
-    ),
-  // Input
-  $input-height:
-    (
-      'default': 32px,
-      'medium': 48px,
-      'small': 32px,
-      'mini': 28px,
-    ),
-  $input-font-size: (
-    'base': 14px,
-    'small': 14px,
-    'medium': 16px,
-  ),
-  $input-line-height: (
-    'default': 28px,
-    'medium': 32px,
-    'small': 24px,
-    'mini': 20px,
-  ),
-  $input: (
-    'border-radius': $--borderRadius-sm,
+  $border-radius: (
+    'base': $--borderRadius-sm,
+    'small': $--borderRadius-sm,
+    'round': $--borderRadius-full,
+    'circle': 100%,
   ),
 
-  //DatePicker
-  $date-editor:
-  (
-    'width': 220px,
-    'monthrange-width': 300px,
-    'daterange-width': 320px,
-    'datetimerange-width': 400px,
+  // Box-shadow
+  // 视组件覆盖情况决定是否需补充其余shadow变量
+  $box-shadow: (
+    '': $--shadow-base,
+    'light': $--shadow-md,
+    'lighter': $--shadow-sm,
+    'dark': $--shadow-2xl,
+  ),
+
+  // Typography
+  $font-size: (
+    'extra-large': $--fontSize-xl,
+    'large': $--fontSize-lg,
+    'medium': $--fontSize-base,
+    'base': $--fontSize-sm,
+    'small': $--fontSize-xs,
+    'extra-small': $--fontSize-xs,
+  ),
+
+  // Disable default
+  $disabled: (
+    'border-color': getCssVar('border-color'),
+  ),
+
+  // Size
+  $common-component-size: (
+    'large': 40px,
+    'default': 32px,
+    'small': 28px,
+    'mini': 24px,
+  ),
+
+
+  // Components
+  // ---
+  // Tag
+  $tag: (
+    'font-size-large': getCssVar('font-size-base'),
+    'font-size-default': getCssVar('font-size-base'),
+    'font-size-small': getCssVar('font-size-small'),
+    'font-size-mini': getCssVar('font-size-small'),
+    'border-radius': $--borderRadius-sm,
+    'icon-size-large': 16px,
+    'icon-size-default': 16px,
+    'icon-size-small': 14px,
+    'icon-size-mini': 14px,
+  ),
+  $tag-height: (
+    'large': 32px,
+    'default': 28px,
+    'small': 24px,
+    'mini': 18px,
+  ),
+  $tag-padding: (
+    'large': 0 12px,
+    'default': 0 10px,
+    'small': 0 8px,
+    'mini': 0 8px,
+  ),
+
+  // Badge
+  $badge: (
+    'radius': 24px,
+    'font-size-large': getCssVar('font-size-base'),
+    'font-size-medium':getCssVar('font-size-base'),
+    'font-size-small': getCssVar('font-size-small'),
+    'padding-large': 8px,
+    'padding-medium': 6px,
+    'padding-small': 4px,
+    'size-large': 24px,
+    'size-medium': 18px,
+    'size-small': 14px,
+    'dot-size-large': 10px,
+    'dot-size-medium': 8px,
+    'dot-size-small': 6px,
   ),
 
   // Button
-  $button-font-size:
-    (
-      'small': 14px,
-      'mini': 12px,
-    ),
-  $button-padding-vertical: (
-    'default': 9px,
-    'medium': 9px,
-    'small': 5px,
-    'mini': 1px,
-  ),
-  $button-padding-horizontal: (
-    'default': 12px,
-    'medium': 16px,
-    'small': 12px,
-    'mini': 8px,
+  $button-font-size: (
+    'small': getCssVar('font-size', 'base'),
   ),
   $button-border-radius: (
-    'default': $--borderRadius-sm,
-    'medium': $--borderRadius-sm,
-    'small': $--borderRadius-default,
-    'mini': $--borderRadius-sm,
+    'small': getCssVar('border-radius', 'base'),
   ),
-  // Select
-  $select-option:
-    (
-      'height': 40px,
-    ),
-  $select-group: (
-    'height': 32px,
-    'font-size': 14px,
+  $button-padding-vertical: (
+    'large': 12px,
+    'default': 8px,
   ),
-  // Dropdown
-  $dropdown:
-    (
-      'menu-box-shadow': $--shadow-xs,
-      'menuItem-hover-fill': $--color-brand-100,
-      'menuItem-hover-color': $--color-brand-500,
-    ),
-  // Radio & Checkbox
-  $radio-height:
-    (
-      'large': 48px,
-      'default': 32px,
-      'small': 28px,
-      'mini': 24px,
-    ),
-  $checkbox: (
-    'disabled-input-fill': $--color-neutral-10,
-    'disabled-checked-input-fill': $--color-neutral-10,
-    'checked-font-color': $--color-neutral-600,
+  $button-padding-horizontal: (
+    'large': 16px,
+    'default': 12px,
+    'small': 10px,
+    'mini': 8px,
   ),
-  // Cascader
-  $cascader:
-    (
-      'menu-selected-font-color': $--color-neutral-600,
-      'node-background-hover': $--color-neutral-10,
-      'tag-background': $--color-neutral-20,
-    ),
-  // Tag
-  $tag:
-    (
-      'border-radius': $--borderRadius-sm,
-    ),
-  // Card
-  $card:
-    (
-      'border-radius': $--borderRadius-default,
-      'padding': 16px,
-      'background-color': var(--el-color-white),
-    ),
-  // Drawer
-  $drawer:
-    (
-      'padding-primary': var(--el-dialog-padding-primary, 24px),
-    ),
-  // Table
-  $table:
-    (
-      'row-hover-background-color': $--color-brand-100,
-    ),
-  // Descriptions
-  $descriptions:
-    (
-      'header-margin-bottom': 16px,
-      'item-bordered-label-background': $--color-neutral-00,
-    )
+
+  // Input
+  $input-padding-horizontal: (
+    'mini': 8px,
+  ),
+
 );
 
-/* icon font path, required */
-$--font-path: 'node_modules/element-plus/theme-chalk/fonts';
+// 如果只是按需导入，则可以忽略以下内容。
+// 如果你想导入所有样式:
+// @use 'element-plus/theme-chalk/src/index.scss' as *;
+

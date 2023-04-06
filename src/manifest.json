@@ -9,18 +9,24 @@
     "128": "assets/icons/icon128.png"
   },
   "action": {
-    "default_popup": "/index.html"
+    "default_title": "ChatGPT VOC",
+    "default_popup": "/popup.html"
   },
-  "content_scripts": [{
-    "matches": [ "https://www.google.com/*" ],
-    "js": [ "content-scripts/content.ts"],
-    "run_at": "document_start"
-  }],
+  "content_scripts": [
+    {
+      "matches": [ "https://www.amazon.com/*" ],
+      "js": [ "content-scripts/content.ts"],
+      "run_at": "document_end"
+    }
+  ],
   "background": {
     "service_worker": "./background/index.ts"
   },
   "web_accessible_resources": [{
     "matches": ["<all_urls>"],
     "resources": ["assets/*"]
-  }]
+  }],
+  "permissions": [
+    "notifications"
+  ]
 }

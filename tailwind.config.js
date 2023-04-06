@@ -228,46 +228,12 @@ module.exports = {
     },
 
     extend: {
-      screens: {
-        '1.5xl': '1440px',
-        '2xl': '1536px',
-        '3xl': '1720px',
-      },
-      width: {
-        50: '200px',
-        '5/7': '70%',
-      },
-      minWidth: {
-        32: '32px',
-        48: '48px',
-        120: '120px',
-        198: '198px',
-        280: '280px', // project-card
-        320: '320px',
-        400: '400px',
-        480: '480px',
-        1024: '1024px',
-      },
-      maxWidth: {
-        160: '160px',
-        200: '200px',
-        240: '240px',
-        320: '320px',
-        400: '400px',
-        640: '640px',
-        1280: '1280px',
-        1512: '1512px',
-        '1/2': '50%',
-      },
-      minHeight: {
-        40: '40px',
-        160: '160px',
-        300: '300px',
-      },
-      maxHeight: {
-        '1/2': '50%',
-        '1/3': '33.33%',
-      },
+      screens: {},
+      width: {},
+      minWidth: {},
+      maxWidth: {},
+      minHeight: {},
+      maxHeight: {},
     },
   },
   variants: {

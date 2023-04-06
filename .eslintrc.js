@@ -34,9 +34,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-plusplus': 'off',
     'no-return-await': 'off',
-    semi: [
-      'error',
-      'never',
-    ],
+    semi: ['error', 'never'],
+    'max-len': ['error', { code: 120 }],
   },
 }
