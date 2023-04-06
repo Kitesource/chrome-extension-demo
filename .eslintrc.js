@@ -36,5 +36,7 @@ module.exports = {
     'no-return-await': 'off',
     semi: ['error', 'never'],
     'max-len': ['error', { code: 120 }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'implicit-arrow-linebreak': 'off',
   },
 }

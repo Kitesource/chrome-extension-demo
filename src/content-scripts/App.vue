@@ -40,8 +40,11 @@
           />
         </div>
         <div class="flex flex-wrap gap-2">
-          <el-button round>
-            评论分享 ChatGPT
+          <el-button
+            round
+            @click="getAnalysisData"
+          >
+            Reviews analysis via chatgpt
           </el-button>
           <el-button round>
             Listing优化 ChatGPT
@@ -68,9 +71,31 @@
 <script lang="ts" setup>
 import { ElMessage } from 'element-plus'
 import { CopyDocument, Download } from '@element-plus/icons-vue'
+import { getAnalysisReviews } from '@/api'
 
 function handleClick() {
   ElMessage.success('click me')
+}
+
+async function getAnalysisData() {
+  try {
+    const res = await getAnalysisReviews({
+      reviews: [
+        'Really good',
+        `I love this thing, it’s my 2nd one and I still use my first one has my work charger and it does amazing job,
+        super fast charge too! It does get dirty in the factory I work in but it’s great! 
+        Only complaint I have it the brick does get hot but I don’t know if the plug I use or what`,
+        'Well made.',
+        'Works great. I like the extra long cord.',
+        `since late 2011, when I first hear about Anker I've been choosing this brand. Really nice products, 
+        tough, reliable and cost effective. I already got Power Banks, several iphone cables, ear pods, 
+        portable bluetooth speakers and chargers. All of them working very well until nowadays.`,
+      ],
+    })
+    console.log('res', res)
+  } catch (error) {
+    console.error(error)
+  }
 }
 </script>
 <style scoped lang="scss">
