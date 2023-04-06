@@ -33,3 +33,6 @@ npm run dev
 # production
 npm run build
 ```
+
+## More Information
+[vite-plugin-vue-crx3](https://github.com/yeqisong/vite-plugin-vue-crx3)

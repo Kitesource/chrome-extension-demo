@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "亚马逊的ChatGPT工具-ChatGPT VOC",
+    "description": "extension name"
+  },
+  "extensionDescription": {
+    "message": "运用ChatGPT/GPT4的亚马逊全量评论分析和下载、消费者洞察插件",
+    "description": "extension description"
+  }
+}

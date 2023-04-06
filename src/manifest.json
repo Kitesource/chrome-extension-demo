@@ -1,8 +1,9 @@
 {
-  "name": "crx-voc",
+  "name": "__MSG_extensionName__",
   "manifest_version": 3,
-  "description": "A Chrome extension demo.",
+  "description": "__MSG_extensionDescription__",
   "version": "1.0.0",
+  "default_locale": "zh_CN",
   "icons": {
     "16": "assets/icons/icon16.png",
     "48": "assets/icons/icon48.png",
@@ -20,7 +21,7 @@
     }
   ],
   "background": {
-    "service_worker": "./background/index.ts"
+    "service_worker": "background/index.ts"
   },
   "web_accessible_resources": [{
     "matches": ["<all_urls>"],

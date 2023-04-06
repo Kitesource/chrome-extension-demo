@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "ChatGPT VOC",
+    "description": "extension name"
+  },
+  "extensionDescription": {
+    "message": "ChatGPT VOC Description",
+    "description": "extension description"
+  }
+}
