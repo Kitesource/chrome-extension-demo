@@ -7,7 +7,7 @@ import '@/styles/index.scss'
   if (beforeRoot && import.meta.env.MODE === 'development') {
     document.body.removeChild(beforeRoot)
   }
-  const el = document.querySelector('div[cel_widget_id="showing-breadcrumbs_csm_instrumentation_wrapper"]')
+  const el = document.querySelector('#rw-preload-landing-image_div')
   if (el) {
     el.insertAdjacentHTML('afterend', '<div id="crx-app"></div>')
     const app = createApp(App)

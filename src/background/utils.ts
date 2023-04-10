@@ -27,7 +27,7 @@ export const sendMessage = (taskId: string, params: any) => new Promise((resolve
   )
 })
 
-export const showStayNotification = (type:any, title:string, message:string) => {
+export const showNotification = (type:any, title:string, message:string) => {
   chrome.notifications.create({
     type,
     iconUrl: 'https://www.google.com/favicon.ico',

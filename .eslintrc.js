@@ -38,5 +38,10 @@ module.exports = {
     'max-len': ['error', { code: 120 }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'implicit-arrow-linebreak': 'off',
+    'no-undef': 'off',
+    'no-param-reassign': 'off',
+    'no-promise-executor-return': 'off',
+    'no-useless-escape': 'off',
+    'no-unused-expressions': 'off',
   },
 }
