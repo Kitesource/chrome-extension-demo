@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite build --watch --mode development",
     "build": "vite build",
-    "lint": "eslint ./src/**/*.{ts,vue}",
+    "lint": "eslint ./src/**/*.{ts,vue} --fix",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -15,7 +15,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
     "@vitejs/plugin-vue": "^2.3.4",
-    "axios": "^1.3.5",
+    "@yimian-ui/icons": "^0.1.3",
     "element-plus": "^2.3.2",
     "idb": "^7.1.1",
     "qs": "^6.11.1",

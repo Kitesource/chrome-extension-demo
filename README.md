@@ -3,27 +3,11 @@
 ## Install
 ```shell
 # npm
-npm install vite-plugin-crx-mv3 -D
+npm install
 # or yarn
-yarn add vite-plugin-crx-mv3 -D
+yarn add
 # or pnpm
-pnpm add vite-plugin-crx-mv3 -D
-```
-
-## Configuration
-```javascript
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import crx from 'vite-plugin-crx-mv3'
-
-export default defineConfig({
-  plugins: [
-    vue(),
-    crx({
-      manifest: './src/manifest.json'
-    }),
-  ],
-})
+pnpm install
 ```
 
 ## Run
@@ -33,6 +17,3 @@ npm run dev
 # production
 npm run build
 ```
-
-## More Information
-[vite-plugin-vue-crx3](https://github.com/yeqisong/vite-plugin-vue-crx3)
